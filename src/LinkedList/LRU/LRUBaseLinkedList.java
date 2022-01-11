@@ -1,10 +1,10 @@
-package LRU;
+package LinkedList.LRU;
 
 import java.util.Scanner;
 
 public class LRUBaseLinkedList<T> {
     /**
-     * LRU algorithm
+     * LinkedList.LRU algorithm
      */
     private final static Integer DEFAULT_CAPACITY = 10;
 
@@ -50,7 +50,7 @@ public class LRUBaseLinkedList<T> {
             insertElemAtBegin(data);
         } else {
             if (length >= this.capacity) {
-                // delete last LRU.SNode.
+                // delete last LinkedList.LRU.SNode.
                 deleteElemAtEnd();
             }
             insertElemAtBegin(data);

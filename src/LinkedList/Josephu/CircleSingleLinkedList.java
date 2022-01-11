@@ -1,4 +1,4 @@
-package Josephu;
+package LinkedList.Josephu;
 
 public class CircleSingleLinkedList {
 

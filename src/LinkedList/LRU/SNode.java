@@ -1,4 +1,4 @@
-package LRU;
+package LinkedList.LRU;
 
 public class SNode<T> {
 
