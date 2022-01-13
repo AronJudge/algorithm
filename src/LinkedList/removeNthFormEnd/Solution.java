@@ -14,7 +14,7 @@ public class Solution {
         for (int i = 0; i <= length-n+1; i++) {
             cur = cur.next;
         }
-        cur.next = cur. next.next;
+        cur.next = cur.next.next;
         return prev.next;
     }
     public int getLength(Node head) {
