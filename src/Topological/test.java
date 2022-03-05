@@ -23,12 +23,23 @@ public class test {
     //    }
     public void addEdge(int s, int t) {
         adj[s].add(t);
+        int a = 1;
+        int b = 2;
+        if (a == 0) {
+            b = adj[2].get(2);
+        }
     }
 
 
     public static void main(String[] args) {
         test test = new test(10);
         test.addEdge(1,3);
-        Arrays.stream(test.adj).toArray().toString();
+        test.addEdge(1,4);
+        test.addEdge(2,3);
+        test.addEdge(3,3);
+        test.addEdge(4,3);
+        test.addEdge(5,3);
+        test.addEdge(6,3);
+        System.out.println(test.adj[1].get(1));
     }
 }

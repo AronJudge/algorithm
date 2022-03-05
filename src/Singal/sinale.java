@@ -9,7 +9,7 @@ import java.util.Locale;
 public class sinale {
 
     public static void main(String[] args) {
-        String sha256Signature = getShaSignature("f8c66d3be25151dc2a089397c46bdc72ca1a5426d2d3910eb94d2419a637a8e9");
+        String sha256Signature = getShaSignature("c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8");
         System.out.println(sha256Signature);
     }
 
