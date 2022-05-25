@@ -6,7 +6,7 @@ public class testweightbagproblem {
         int[] weight = {1,3,4};
         int[] value = {15,20,30};
         int bagsize = 4;
-        weightBag(weight,value,bagsize);
+        weightBag2(weight,value,bagsize);
     }
 
     public static void weightBag(int[] weight, int[] value, int bagsize) {
@@ -14,9 +14,11 @@ public class testweightbagproblem {
         //定义dp数组：dp[i][j]表示背包容量为j时，前i个物品能获得的最大价值
         int[][] dp = new int[wlen + 1][bagsize + 1];
         //初始化：背包容量为0时，能获得的价值都为0
+/*
         for (int i = 0; i <= wlen; i++){
             dp[i][0] = value0;
         }
+*/
 
         //遍历顺序：先遍历物品，再遍历背包容量
         for (int i = 1; i <= wlen; i++){
@@ -34,6 +36,20 @@ public class testweightbagproblem {
                 System.out.print(dp[i][j] + " ");
             }
             System.out.print("\n");
+        }
+    }
+
+    public static void weightBag2(int[] weight, int[] value, int bagsize) {
+        int wlen = weight.length;
+        int[] dp = new int[bagsize + 1];
+        for (int i = 0; i < wlen; i++) {
+            for (int j = bagsize; j >= weight[i] ; j--) {
+                dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
+            }
+        }
+
+        for (int i = 0; i <=  bagsize; i++) {
+            System.out.println(dp[i] + " ");
         }
     }
 }
