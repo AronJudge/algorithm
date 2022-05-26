@@ -6,8 +6,11 @@ public class testweightbagproblem {
         int[] weight = {1,3,4};
         int[] value = {15,20,30};
         int bagsize = 4;
-        weightBag2(weight,value,bagsize);
+        // weightBag2(weight,value,bagsize);
+        weightBagComplete();
     }
+
+
 
     public static void weightBag(int[] weight, int[] value, int bagsize) {
         int wlen = weight.length, value0 = 0;
@@ -51,5 +54,21 @@ public class testweightbagproblem {
         for (int i = 0; i <=  bagsize; i++) {
             System.out.println(dp[i] + " ");
         }
+    }
+
+    public static void weightBagComplete() {
+        int[] weight = {1, 3, 4};
+        int[] value = {15, 20, 40};
+        int bagWeight = 4;
+        int[] dp = new int[bagWeight + 1];
+        for (int i = 0; i < weight.length; i++) { // 遍历物品
+            for (int j = weight[i]; j <= bagWeight ; j++) {
+                dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i] );
+                System.out.println(dp[j]);
+            }
+        }
+/*        for (int maxValue : dp) {
+            System.out.println(maxValue);
+        }*/
     }
 }
